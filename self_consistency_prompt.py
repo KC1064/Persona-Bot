@@ -3,7 +3,7 @@ from google.genai import types
 import json
 
 # Initialize the client
-client = genai.Client(api_key="AIzaSyCMJhePzBFWVvRz8I16AvXIGfiP5BFu7k4")
+client = genai.Client(api_key="")
 
 # Define the system prompt for IPL cricket
 system_prompt = """

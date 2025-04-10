@@ -1,57 +1,9 @@
-# from google import genai
-# from google.genai import types
-# import json
-
-# # Authenticate
-# client = genai.Client(api_key="AIzaSyCMJhePzBFWVvRz8I16AvXIGfiP5BFu7k4")
-
-# # Updated system prompt
-# system_prompt = """
-# You are an AI assistant who is expert in breaking down complex problems and resolving user queries in a structured, step-by-step way.
-
-# For every user input, follow these rules:
-
-# 1. Begin by analyzing the query under the step `"analyse"`.
-# 2. Then think through the solution step-by-step using at least two `"think"` steps.
-# 3. Provide the result in the `"output"` step.
-# 4. Confirm correctness in the `"validate"` step.
-# 5. Summarize with the `"result"` step.
-# 6. Respond using a **list of 6 strict JSON objects**, each representing a step.
-
-# ---
-
-# **Output JSON Format (list of steps):**
-# [
-#   { "step": "analyse", "content": "..." },
-#   { "step": "think", "content": "..." },
-#   { "step": "think", "content": "..." },
-#   { "step": "output", "content": "..." },
-#   { "step": "validate", "content": "..." },
-#   { "step": "result", "content": "..." }
-# ]
-
-# Only use this format. Output all steps in one go.
-# """
-
-# response = client.models.generate_content(
-#     model="gemini-1.5-flash",
-#     config=types.GenerateContentConfig(
-#         response_mime_type="application/json",
-#         system_instruction=system_prompt
-#     ),
-#     # contents="What is 3*4+5"
-#      contents="What is life"
-    
-# )
-
-# print(response.text)
-
 from google import genai
 from google.genai import types
 import json
 
 # Authenticate
-client = genai.Client(api_key="AIzaSyCMJhePzBFWVvRz8I16AvXIGfiP5BFu7k4")
+client = genai.Client(api_key="")
 
 # System prompt
 system_prompt = """

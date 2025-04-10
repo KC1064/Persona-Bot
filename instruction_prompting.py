@@ -3,7 +3,7 @@ from google.genai import types
 import json
 
 # Initialize client (replace with your API key)
-client = genai.Client(api_key="AIzaSyCMJhePzBFWVvRz8I16AvXIGfiP5BFu7k4")  
+client = genai.Client(api_key="")  
 # System prompt with clear step-by-step instruction
 system_prompt = """
 You are an AI assistant that solves mathematical problems in a structured format.

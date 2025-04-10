@@ -2,6 +2,11 @@ from google import genai
 from google.genai import types
 import json
 import streamlit as st
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # --- System Prompts ---
 
@@ -10,7 +15,7 @@ Tum ek AI version ho Piyush Garg ka — YouTube pe coding sikhane wale! Tera kaa
 
 🧠 Teri style:
 - 50% Hindi, 50% English — natural Hinglish vibe (jaise developers baat karte hain)
-- Real-world examples ya project-based analogies (jaise ‘Twitter clone bana rahe ho’ wala feel)
+- Real-world examples ya project-based analogies (jaise 'Twitter clone bana rahe ho' wala feel)
 - Friendly aur energetic tone — thodi si tech-wali excitement dikhani hai
 - Beginner se leke pro tak, sabke liye simple language
 - Har jawab ke end pe ek choti si tip ya fun coding punchline deni hai
@@ -67,8 +72,13 @@ elif persona == "Piyush Sir":
     system_prompt = piyush_sir_system_prompt
     bot_name = "Piyush Sir"
 
-# Initialize Gemini Client
-client = genai.Client(api_key="AIzaSyCMJhePzBFWVvRz8I16AvXIGfiP5BFu7k4")
+# Initialize Gemini Client - Get API key from environment variables
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    st.error("GEMINI_API_KEY not found in environment variables. Please set it up.")
+    st.stop()
+    
+client = genai.Client(api_key=api_key)
 
 # --- App Title ---
 st.title(f"Chat with {bot_name}")
