@@ -1,7 +1,8 @@
 # from google import genai
 import google.generativeai as genai
-from google.genai import types
+from google.generativeai.types import Content, Part  # or other types as needed
 import json
+
 
 # Authenticate
 client = genai.Client(api_key="")
