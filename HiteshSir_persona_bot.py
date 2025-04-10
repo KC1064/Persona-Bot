@@ -1,5 +1,5 @@
-from google import genai
-from google.genai import types
+import google.generativeai as genai
+from google.generativeai.types import Content, Part  # or other types as needed
 import json
 import streamlit as st
 import os
